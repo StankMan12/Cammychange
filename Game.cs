@@ -54,7 +54,7 @@ public static unsafe class Game
             camera->VTable.getCameraPosition.Original(camera, target, position, swapPerson);
 
             if (((preset.ViewBobMode == CameraConfigPreset.ViewBobSetting.FirstPerson && (camera->mode == 0 || (camera->transition != 0 && camera->controlType <= 2)))
-                    || (preset.ViewBobMode == CameraConfigPreset.ViewBobSetting.OutOfCombat && !DalamudApi.Condition[ConditionFlag.InCombat])
+                    || (preset.ViewBobMode == CameraConfigPreset.ViewBobSetting.OutOfCombat && !DalamudApi.Condition[ConditionFlag.OutOfCombat])
                     || preset.ViewBobMode == CameraConfigPreset.ViewBobSetting.Always)
                 && Common.getWorldBonePosition.IsValid && target->DrawObject != null)
             {
